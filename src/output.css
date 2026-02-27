@@ -7,6 +7,7 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
     --container-2xl: 42rem;
@@ -290,9 +291,6 @@
   .inline-block {
     display: inline-block;
   }
-  .table {
-    display: table;
-  }
   .h-6 {
     height: calc(var(--spacing) * 6);
   }
@@ -308,14 +306,8 @@
   .w-6 {
     width: calc(var(--spacing) * 6);
   }
-  .w-\[1\%\] {
-    width: 1%;
-  }
   .w-\[10\%\] {
     width: 10%;
-  }
-  .w-\[15\%\] {
-    width: 15%;
   }
   .w-\[17\%\] {
     width: 17%;
@@ -340,12 +332,6 @@
   }
   .max-w-\[1440px\] {
     max-width: 1440px;
-  }
-  .flex-shrink {
-    flex-shrink: 1;
-  }
-  .border-collapse {
-    border-collapse: collapse;
   }
   .scale-y-0 {
     --tw-scale-y: 0%;
@@ -434,33 +420,11 @@
   .rounded-lg {
     border-radius: var(--radius-lg);
   }
-  .border {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
-  }
-  .border-2 {
-    border-style: var(--tw-border-style);
-    border-width: 2px;
-  }
-  .border-t {
-    border-top-style: var(--tw-border-style);
-    border-top-width: 1px;
-  }
-  .border-b {
-    border-bottom-style: var(--tw-border-style);
-    border-bottom-width: 1px;
-  }
-  .border-\[\#707070\] {
-    border-color: #707070;
-  }
   .bg-\[\#0A227E\] {
     background-color: #0A227E;
   }
   .p-4 {
     padding: calc(var(--spacing) * 4);
-  }
-  .px-2 {
-    padding-inline: calc(var(--spacing) * 2);
   }
   .px-3 {
     padding-inline: calc(var(--spacing) * 3);
@@ -470,9 +434,6 @@
   }
   .px-12 {
     padding-inline: calc(var(--spacing) * 12);
-  }
-  .py-2 {
-    padding-block: calc(var(--spacing) * 2);
   }
   .py-3 {
     padding-block: calc(var(--spacing) * 3);
@@ -502,22 +463,11 @@
   .uppercase {
     text-transform: uppercase;
   }
-  .underline {
-    text-decoration-line: underline;
-  }
   .opacity-0 {
     opacity: 0%;
   }
   .opacity-100 {
     opacity: 100%;
-  }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
-  }
-  .backdrop-filter {
-    -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
-    backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
   }
   .transition {
     transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
@@ -641,16 +591,6 @@
       padding-inline: calc(var(--spacing) * 0);
     }
   }
-  .md\:px-6 {
-    @media (width >= 48rem) {
-      padding-inline: calc(var(--spacing) * 6);
-    }
-  }
-  .md\:px-12 {
-    @media (width >= 48rem) {
-      padding-inline: calc(var(--spacing) * 12);
-    }
-  }
   .md\:py-5 {
     @media (width >= 48rem) {
       padding-block: calc(var(--spacing) * 5);
@@ -696,15 +636,6 @@
       padding-block: calc(var(--spacing) * 20);
     }
   }
-  .hover\:\[\&_\.mobile-link\]\:bg-\[\#F57820\] {
-    &:hover {
-      @media (hover: hover) {
-        & .mobile-link {
-          background-color: #F57820;
-        }
-      }
-    }
-  }
   .\[\&_a\]\:text-lg {
     & a {
       font-size: var(--text-lg);
@@ -725,29 +656,6 @@
   .\[\&_h3\]\:text-\[\#0A227E\] {
     & h3 {
       color: #0A227E;
-    }
-  }
-  .\[\&_mobile-link\]\:bg-\[\#F57820\] {
-    & mobile-link {
-      background-color: #F57820;
-    }
-  }
-  .\[\&_mobile-link\]\:hover\:bg-\[\#F57820\] {
-    & mobile-link {
-      &:hover {
-        @media (hover: hover) {
-          background-color: #F57820;
-        }
-      }
-    }
-  }
-  .hover\:\[\&_mobile-link\]\:bg-\[\#F57820\] {
-    &:hover {
-      @media (hover: hover) {
-        & mobile-link {
-          background-color: #F57820;
-        }
-      }
     }
   }
 }
@@ -817,7 +725,7 @@ body {
     color: #000000;
   }
   .nav-logo {
-    max-width: 126px !important;
+    max-width: 126px;
   }
   .btn {
     font-family: "proxima-nova", sans-serif;
@@ -913,6 +821,13 @@ body {
 }
 #menuToggleBtn {
   cursor: pointer;
+  padding: calc(var(--spacing) * 2);
+  color: var(--color-white);
+  display: block !important;
+  z-index: 60;
+}
+#mainNavbar.fixed #menuToggleBtn, #mainNavbar.sticky #menuToggleBtn {
+  display: block !important;
 }
 nav .nav-link {
   position: relative;
@@ -1154,53 +1069,7 @@ nav .nav-link:hover::after, nav .nav-link:focus-visible::after {
   inherits: false;
   initial-value: 0;
 }
-@property --tw-border-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
 @property --tw-font-weight {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
-@property --tw-backdrop-blur {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-backdrop-brightness {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-backdrop-contrast {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-backdrop-grayscale {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-backdrop-hue-rotate {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-backdrop-invert {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-backdrop-opacity {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-backdrop-saturate {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-backdrop-sepia {
   syntax: "*";
   inherits: false;
 }
@@ -1211,6 +1080,11 @@ nav .nav-link:hover::after, nav .nav-link:focus-visible::after {
 @property --tw-ease {
   syntax: "*";
   inherits: false;
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
 }
 @property --tw-tracking {
   syntax: "*";
@@ -1233,20 +1107,10 @@ nav .nav-link:hover::after, nav .nav-link:focus-visible::after {
       --tw-skew-y: initial;
       --tw-space-y-reverse: 0;
       --tw-space-x-reverse: 0;
-      --tw-border-style: solid;
       --tw-font-weight: initial;
-      --tw-outline-style: solid;
-      --tw-backdrop-blur: initial;
-      --tw-backdrop-brightness: initial;
-      --tw-backdrop-contrast: initial;
-      --tw-backdrop-grayscale: initial;
-      --tw-backdrop-hue-rotate: initial;
-      --tw-backdrop-invert: initial;
-      --tw-backdrop-opacity: initial;
-      --tw-backdrop-saturate: initial;
-      --tw-backdrop-sepia: initial;
       --tw-duration: initial;
       --tw-ease: initial;
+      --tw-border-style: solid;
       --tw-tracking: initial;
       --tw-leading: initial;
     }
