@@ -10,6 +10,9 @@ html{
   scroll-margin-top: 130px; 
 }
 
+nav{
+  overflow-x: hidden;
+}
 
 
 /* Regular */
