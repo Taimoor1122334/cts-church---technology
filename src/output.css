@@ -613,10 +613,27 @@
       gap: calc(var(--spacing) * 20);
     }
   }
+  .md\:border-2 {
+    @media (width >= 48rem) {
+      border-style: var(--tw-border-style);
+      border-width: 2px;
+    }
+  }
   .md\:border-t {
     @media (width >= 48rem) {
       border-top-style: var(--tw-border-style);
       border-top-width: 1px;
+    }
+  }
+  .md\:border-b {
+    @media (width >= 48rem) {
+      border-bottom-style: var(--tw-border-style);
+      border-bottom-width: 1px;
+    }
+  }
+  .md\:border-\[\#707070\] {
+    @media (width >= 48rem) {
+      border-color: #707070;
     }
   }
   .md\:px-0 {
