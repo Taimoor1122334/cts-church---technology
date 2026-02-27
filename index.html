@@ -56,7 +56,7 @@ Place That Feels Like">
     <!-- ═══════════════════════════════════════════
          NAVBAR  
     ══════════════════════════════════════════════ -->
-   <nav id="mainNavbar" class="relative z-40 transition-all  duration-1000 ease-in-out  px-3 py-2 md:py-5 md:px-0">
+   <nav id="mainNavbar" class="relative z-40 transition-all  duration-1000 ease-in-out  px-3 py-3 md:py-5 md:px-0">
     <div class="max-w-[1440px] mx-auto sm:px-6 lg:px-12 flex items-center justify-between ">
       
       <!-- Logo Section -->
@@ -84,9 +84,9 @@ Place That Feels Like">
       <div class="hidden lg:flex items-center   ">
      <a href="support.html"  class="btn"> Register Now</a>
       </div>
-  
-      <!-- Hamburger Menu -->
-      <div class="lg:hidden">
+  </div>
+   <!-- Hamburger Menu -->
+      <div class="block lg:hidden z-50">
         <button onclick="toggleMenu()" id="menuToggleBtn">
           <!-- Default icon -->
           <svg id="menuIcon" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -95,22 +95,24 @@ Place That Feels Like">
           </svg>
         </button>
       </div>
+      
     </div>
+   
   
     <!-- Mobile Menu -->
     <div id="mobileMenu" class="lg:hidden hidden px-4 py-4 border-t">
-      <nav class="flex flex-col space-y-4  uppercase">
-        <a href="#home" class="mobile-link ">Home</a>
+      <nav class="flex flex-col space-y-4  uppercase [&_a]:text-white [&_a]:text-lg  [&_a]:font-medium bg-[#0A227E] rounded-lg p-4">
+        <a href="#home" class="mobile-link hover:bg-[#F57820] ">Home</a>
 
         <!-- Mobile Dropdown: About -->
         
-          <a href="#about"  class="mobile-link">About</a>
+          <a href="#about"  class="mobile-link hover:bg-[#F57820]">About</a>
           
        
 
-        <a href="#services" class="mobile-link ">Tracks</a>
+        <a href="#tracks" class="mobile-link hover:bg-[#F57820]">Tracks</a>
          
-          <a href="#jobs" class="mobile-link">Who Should Attend</a>
+          <a href="#who-should-attend" class="mobile-link hover:bg-[#F57820]">Who Should Attend</a>
          
        
       
@@ -346,7 +348,7 @@ data-aos="fade-right"
     
     <div class="  mt-4 flex flex-wrap items-center justify-center md:justify-between gap-5 md:gap-10  ">
 <img src="assets/images/Image 2.png" alt="parteners logo"  class="w-[20%] " data-aos="fade-up" data-aos-duration="1000">
-<img src="assets/images/Image 3.png" alt="parteners logo"  class="w-[15%] " data-aos="fade-up" data-aos-duration="1000">
+<img src="assets/images/Image 3.png" alt="parteners logo"  class="w-[10%] " data-aos="fade-up" data-aos-duration="1000">
 <img src="assets/images/Image 4.png" alt="parteners logo"  class="w-[20%] " data-aos="fade-up" data-aos-duration="1000">
 <img src="assets/images/Image 5.png" alt="parteners logo"  class="w-[20%] " data-aos="fade-up" data-aos-duration="1000">
 <img src="assets/images/Image 6.png" alt="parteners logo"  class="w-[10%] " data-aos="fade-up" data-aos-duration="1000">

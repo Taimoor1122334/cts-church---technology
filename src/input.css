@@ -10,6 +10,7 @@ html{
   scroll-margin-top: 130px; 
 }
 
+
 /* Regular */
 body {
   font-family: "proxima-nova", sans-serif;
@@ -83,7 +84,8 @@ font-style: normal;
       @apply font-[700]  text-[#000000]
     }
     .nav-logo{
-        max-width: 126px !important;
+     
+        max-width: 126px ;
     }
     
     .btn{
@@ -147,8 +149,8 @@ nav .nav-link{
   }
 }
 #menuToggleBtn{
-  @apply cursor-pointer
-
+  @apply cursor-pointer 
+  color:white;
 }
 
 
@@ -266,6 +268,8 @@ nav .nav-link:focus-visible::after {
 .hero-slider-area {
   min-height: 320px; /* smaller height on phones */
 }
+
+ 
 }
 
 /* make sure video fills the slide area */
