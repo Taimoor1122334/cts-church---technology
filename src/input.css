@@ -71,15 +71,9 @@ font-style: normal;
     }
     li{
        font-size: clamp(1rem, 0.6vw + 1rem, 1.5rem);
+      
     }
-    li::before{
-        content: '-';
-        color: black;
-        font-weight: bold;
-        display: inline-block;
-        width: 1rem;
-       
-    }
+   
     .large-p{
         font-size:clamp(1.125rem, 1.3vw + 1rem, 2.125rem);
         /* @apply text-[34px] */
@@ -90,9 +84,7 @@ font-style: normal;
     .nav-logo{
         max-width: 126px !important;
     }
-    .footer-logo{
-        @apply max-w-[53]
-    }
+    
     .btn{
          font-family: "proxima-nova", sans-serif;
   font-weight: 700;
@@ -103,27 +95,8 @@ font-style: normal;
   font-weight: 700;
         @apply text-[13px] md:text-[15px]  bg-transparent border-2 border-white py-2 px-6 rounded-full text-white  hover:bg-[#F57820] 
     }
-    .white-btn{
-         font-family: "proxima-nova", sans-serif;
-  font-weight: 700;
-        @apply text-[13px] md:text-[15px] bg-white hover:bg-[#F57820] hover:text-white py-3 px-6 inline-block  rounded-lg;
-    }
-    .large-btn{
-      
-         font-family: "proxima-nova", sans-serif;
-  font-weight: 700;
-       @apply text-[18px] md:text-[22px] lg:text-[24px] bg-[#F57820] py-2 px-12 rounded-lg text-white hover:bg-[#DF6600]
-    
-    }
-.loc-icon{
-    @apply max-w-5
-}
-.phone-icon{
-    @apply max-w-6
-}
-.clock-icon{
-    @apply max-w-[26px]
-}
+ 
+
 nav .nav-link{
      font-weight: 700;
     @apply uppercase
@@ -283,9 +256,10 @@ nav .nav-link:focus-visible::after {
 }
 
 @media (max-width:768px){
-    #about-aimed,
-#word-from-ceo,
-#volunteer  {
+    #about,
+#tracks,
+#who-should-attend
+ {
   scroll-margin-top: 80px; 
 }
 }
