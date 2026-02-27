@@ -21,11 +21,42 @@ Place That Feels Like">
 
  <!-- ------------hero-section--------------------->
 
- <section class=" my-0 mx-auto">
-  <div class="w-full max-w-[95%] mx-auto my-[2%]  object-top-right  relative overflow-hidden rounded-3xl"
-  style="background-image: url('assets/images/Mask\ Group\ 1.png'); background-size: cover; background-position: center;">
 
-<nav id="mainNavbar" class=" z-20 transition-all  duration-1000 ease-in-out  px-3 py-2 md:py-5 md:px-0">
+
+<section class="my-0 mx-auto">
+  <div class="w-full max-w-[95%] relative mx-auto my-[2%] overflow-hidden rounded-3xl" style="min-height:680px;">
+
+    <!-- ═══════════════════════════════════════════
+         SLIDER  (lives BEHIND the navbar)
+    ══════════════════════════════════════════════ -->
+    <div class="absolute inset-0 z-0 overflow-hidden rounded-3xl">
+      <div class="slides-track at-0" id="slidesTrack" style="height:100%;">
+
+        <!-- Slide 1 -->
+        <div class="slide is-active" id="slide-0">
+          <!-- swap src for your real image -->
+          <div class="slide-bg" >
+            <video src="assets/videos/los-angeles.mp4" autoplay muted loop width="100%" height="100%"></video>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide" id="slide-1">
+          <!-- swap src for your second image -->
+          <div class="slide-bg">
+            <video src="assets/videos/south-africa.mp4" autoplay muted loop width="100%" height="100%"></video>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- /SLIDER -->
+
+
+    <!-- ═══════════════════════════════════════════
+         NAVBAR  
+    ══════════════════════════════════════════════ -->
+   <nav id="mainNavbar" class="relative z-40 transition-all  duration-1000 ease-in-out  px-3 py-2 md:py-5 md:px-0">
     <div class="max-w-[1440px] mx-auto sm:px-6 lg:px-12 flex items-center justify-between ">
       
       <!-- Logo Section -->
@@ -90,12 +121,18 @@ Place That Feels Like">
       </nav>
     </div>
   </nav>
+    <!-- /NAVBAR -->
 
-    <div class="w-full py-10 md:py-20 lg:py-30 max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-12 object-top-right  relative  ">
-      
 
-      
-        <div class="z-10 flex flex-col justify-center items-start     max-w-[1440px] lg:mx-auto py-20        "
+    <!-- ═══════════════════════════════════════════
+         HERO CONTENT  — one block per slide
+    ══════════════════════════════════════════════ -->
+    <div class="w-full max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-12 relative z-10">
+
+      <!-- Content – Slide 1 -->
+      <div class="slide-content hero-content" data-slide="0"
+           style="display:block; opacity:1; transform:none;">
+       <div class="z-10 flex flex-col justify-center items-start     max-w-[1440px] lg:mx-auto py-30        "
         data-aos="zoom-in"
         data-aos-duration="1500"
         >
@@ -109,16 +146,48 @@ Summit 2026
 
           <div class="mt-8 flex gap-10">
             <a href="#" class="btn">Register Now</a>
+            <a href="#" class="transparent-btn">Learn More</a> 
+        
+        </div>
+      </div>
+      </div>
+
+      <!-- Content – Slide 2 -->
+      <div class="slide-content hero-content" data-slide="1" style="display:none;">
+        <div class="z-10 flex flex-col justify-center items-start     max-w-[1440px] lg:mx-auto py-30        "
+        data-aos="zoom-in"
+        data-aos-duration="1500"
+        >
+          <h1 class="max-w-3xl font-bold text-white ">
+          Church & Technology
+Summit South Africa
+          </h1>
+          <h4>
+            Augst 10, 2026 | Cape Town, South Africa
+          </h4>
+
+          <div class="mt-8 flex gap-10">
+            <a href="#" class="btn">Register Now</a>
             <a href="#" class="transparent-btn">Learn More</a>
 
           
         
         </div>
       </div>
-
-     </div>
+      </div>
 
     </div>
+    <!-- /HERO CONTENT -->
+
+
+    <!-- ═══════════════════════════════════════════
+         PAGINATION DOTS
+    ══════════════════════════════════════════════ -->
+    <div class="absolute bottom-8 left-0 right-20 z-20 flex justify-end items-center gap-3" id="dotsContainer">
+      <button class="dot active" data-index="0" onclick="goToSlide(0)" aria-label="Slide 1"></button>
+      <button class="dot"        data-index="1" onclick="goToSlide(1)" aria-label="Slide 2"></button>
+    </div>
+    <!-- /DOTS -->
 
   </div>
 </section>
@@ -127,7 +196,7 @@ Summit 2026
 
 <!-- ----------About-section----------------->
 
-<section class="border-2 border-t border-b border-[#707070]">
+<section class="border-2 border-t border-b border-[#707070]" id="about">
     <div class="w-full py-10 md:py-15 px-2 md:px-12  lg:py-20 max-w-[1440px] mx-auto">
 <h5>ABOUT CTS</h5>
 <h2>
@@ -164,7 +233,7 @@ From executive leadership and administration to worship, production, IT, and Nex
 
 <!-- -------------Tracks-section------------------>
 
-<section class="w-full py-10 md:py-15 px-2 md:px-12  lg:py-20 max-w-[1440px] mx-auto">
+<section class="w-full py-10 md:py-15 px-2 md:px-12  lg:py-20 max-w-[1440px] mx-auto" id="tracks">
     <div>
 <h5>TRACKS</h5>
 <h2>
@@ -226,7 +295,7 @@ From executive leadership and administration to worship, production, IT, and Nex
 
 <!-- ----------Who-should-attend-section----------------->
 
-<section class="border-2 border-t border-b border-[#707070]">
+<section class="border-2  border-b border-[#707070]" id="who-should-attend">
     <div class="w-full py-10 md:py-15 px-2 md:px-12  lg:py-20 max-w-[1440px] mx-auto">
     
     <div class="w-full  mt-4 flex flex-col md:flex-row  justify-center gap-15 md:gap-20 lg:gap-30 ">
@@ -269,10 +338,17 @@ data-aos="fade-right"
 <!-- --------past-partners--------------->
 
 <section class="border-2  border-b border-[#707070]">
-    <div class="w-full py-10 md:py-15 px-2 md:px-12  lg:py-20 max-w-[1440px] mx-auto">
+    <div class="w-full py-10 md:py-15 px-2 md:px-12  lg:py-20 max-w-[1440px] mx-auto [&_h3]:text-[#0A227E] ">
+
+      <h3>
+        Our Past Partners
+      </h3>
     
     <div class="w-full  mt-4 flex flex-col md:flex-row  justify-center gap-15 md:gap-20 lg:gap-30 ">
-<img src="" alt="">
+<img src="assets/images/Image 2.png" alt="parteners logo"  class="w-[50%] md:w-[30%] h-1/3" data-aos="fade-up" data-aos-duration="1000">
+<img src="assets/images/Image 3.png" alt="parteners logo"  class="w-[50%] md:w-[30%] " data-aos="fade-up" data-aos-duration="1000">
+<img src="assets/images/Image 4.png" alt="parteners logo"  class="w-[50%] md:w-[30%] " data-aos="fade-up" data-aos-duration="1000">
+<img src="assets/images/Image 5.png" alt="parteners logo"  class="w-[50%] md:w-[30%] " data-aos="fade-up" data-aos-duration="1000">
 
     </div>
     </div>

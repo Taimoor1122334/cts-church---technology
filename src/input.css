@@ -3,10 +3,10 @@
 html{
   scroll-behavior: smooth;
 }
-#about-aimed,
-#word-from-ceo,
-#volunteer  {
-  scroll-margin-top: 150px; 
+#about,
+#tracks,
+#who-should-attend  {
+  scroll-margin-top: 130px; 
 }
 
 /* Regular */
@@ -145,6 +145,8 @@ nav .nav-link{
 
 #mainNavbar.sticky {
   background-color: rgba(0, 0, 0, 0.4);
+  
+   backdrop-filter: blur(10px);
 
   background-image: none;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -287,3 +289,92 @@ nav .nav-link:focus-visible::after {
   scroll-margin-top: 80px; 
 }
 }
+
+/* Hero slider: background slides only, nav unaffected */
+.hero-slider-area {
+  min-height: 320px;
+}
+.hero-slide-bg {
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+  pointer-events: none;
+}
+.hero-slide-bg.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.hero-pagination .hero-dot.active-dot {
+  background-color: white;
+}
+.hero-pagination .hero-dot:not(.active-dot) {
+  background-color: transparent;
+}
+.hero-pagination .hero-dot:hover {
+  opacity: 0.9;
+}
+
+
+ .slides-track {
+      display: flex;
+      width: 200%;          /* 2 slides × 100% */
+      height: 100%;
+      transition: transform 0.9s cubic-bezier(0.77, 0, 0.175, 1);
+    }
+    .slide {
+      width: 50%;           /* each slide = 100% of the visible container */
+      height: 100%;
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    /* ── Background images ── */
+    .slide-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center top;
+      transition: transform 1.2s cubic-bezier(0.77, 0, 0.175, 1);
+      will-change: transform;
+    }
+    /* Subtle Ken-Burns on active slide */
+    .slides-track.at-0 .slide:nth-child(1) .slide-bg { transform: scale(1.04); }
+    .slides-track.at-1 .slide:nth-child(2) .slide-bg { transform: scale(1.04); }
+    .slide-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.35) 0%,
+        rgba(0,0,0,0.18) 40%,
+        rgba(0,0,0,0.55) 100%
+      );
+    }
+
+    /* ── Pagination dots ── */
+    .dot {
+      width: 10px; height: 10px;
+      border-radius: 9999px;
+      background: rgba(255,255,255,0.4);
+      border: 1.5px solid rgba(255,255,255,0.6);
+      cursor: pointer;
+      transition: width 0.4s ease, background 0.4s ease;
+    }
+    .dot.active {
+      width: 32px;
+      background: #fff;
+      border-color: #fff;
+    }
+
+    /* ── Slide content fade ── */
+    .slide-content {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.7s ease 0.35s, transform 0.7s ease 0.35s;
+      pointer-events: none;
+    }
+    .slide.is-active .slide-content {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
