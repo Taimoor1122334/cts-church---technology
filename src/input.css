@@ -151,7 +151,13 @@ nav .nav-link{
 }
 #menuToggleBtn{
   @apply cursor-pointer p-2  text-white;
+  display: block !important;
   z-index: 60;
+}
+
+#mainNavbar.fixed #menuToggleBtn,
+#mainNavbar.sticky #menuToggleBtn {
+  display: block !important;
 }
 
 
