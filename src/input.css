@@ -3,6 +3,7 @@
 html{
   scroll-behavior: smooth;
 }
+#home,
 #about,
 #tracks,
 #who-should-attend  {
@@ -262,12 +263,24 @@ nav .nav-link:focus-visible::after {
  {
   scroll-margin-top: 80px; 
 }
+.hero-slider-area {
+  min-height: 320px; /* smaller height on phones */
 }
+}
+
+/* make sure video fills the slide area */
+.slide-bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 
 /* Hero slider: background slides only, nav unaffected */
 .hero-slider-area {
-  min-height: 320px;
+  min-height: 520px;
 }
+
 .hero-slide-bg {
   opacity: 0;
   transition: opacity 0.6s ease-in-out;

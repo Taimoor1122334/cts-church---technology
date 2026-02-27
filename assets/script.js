@@ -88,6 +88,34 @@ window.addEventListener('scroll', function () {
   }
 });
 
+// Highlight nav links when scrolling into sections
+(function() {
+  const navLinks = document.querySelectorAll('nav .nav-link');
+  const sections = Array.from(document.querySelectorAll('section[id]'));
+  if (!navLinks.length || !sections.length) return;
+
+  const offset = 120; // approximate height of fixed header
+
+  function updateActiveLink() {
+    let current = sections[0];
+    const scrollPos = window.scrollY;
+    sections.forEach(sec => {
+      if (scrollPos >= sec.offsetTop - offset) {
+        current = sec;
+      }
+    });
+    navLinks.forEach(link => link.removeAttribute('id'));
+    const selector = `nav .nav-link[data-link="${current.id}"]`;
+    const activeLink = document.querySelector(selector);
+    if (activeLink) activeLink.id = 'active';
+  }
+
+  window.addEventListener('scroll', updateActiveLink);
+  window.addEventListener('resize', updateActiveLink);
+  document.addEventListener('DOMContentLoaded', updateActiveLink);
+  updateActiveLink();
+})();
+
 // Hero slider: pagination only (2 dots), no arrows
 (function () {
   const slideBg = document.querySelectorAll('.hero-slide-bg');
@@ -136,13 +164,13 @@ document.querySelectorAll('.dropdown-container').forEach(container => {
 
 
   /* ── Slider State ── */
-  let current = 0;
-  const total = 2;
-  let autoTimer = null;
+  // let current = 0;
+  // const total = 2;
+  // let autoTimer = null;
 
-  const track      = document.getElementById('slidesTrack');
-  const dots       = document.querySelectorAll('.dot');
-  const allContent = document.querySelectorAll('.hero-content');
+  // const track      = document.getElementById('slidesTrack');
+  // const dots       = document.querySelectorAll('.dot');
+  // const allContent = document.querySelectorAll('.hero-content');
 
   function goToSlide(index) {
     if (index === current) return;
@@ -154,8 +182,8 @@ document.querySelectorAll('.dropdown-container').forEach(container => {
     current = index;
 
     /* move track */
-    track.style.transform = `translateX(-${current * 50}%)`;
-    track.className = `slides-track at-${current}`;
+    // track.style.transform = `translateX(-${current * 50}%)`;
+    // track.className = `slides-track at-${current}`;
 
     /* show new content with fade */
     const nextContent = allContent[current];
@@ -175,7 +203,20 @@ document.querySelectorAll('.dropdown-container').forEach(container => {
     /* update dots */
     dots.forEach((d, i) => d.classList.toggle('active', i === current));
 
-    resetAutoPlay();
+    // check for video in newly-active slide
+    const currentVideo = document.querySelector(`#slide-${current} video`);
+    if (currentVideo) {
+      // make sure the video starts fresh
+      currentVideo.loop = false;
+      currentVideo.currentTime = 0;
+      // some browsers won't autoplay unless play() is called when visible
+      currentVideo.play().catch(() => {/* ignore playback failures */});
+      // remove any previous end handler to avoid duplicates
+      currentVideo.onended = nextSlide;
+      clearInterval(autoTimer);
+    } else {
+      resetAutoPlay();
+    }
   }
 
   function nextSlide() {
@@ -187,8 +228,20 @@ document.querySelectorAll('.dropdown-container').forEach(container => {
     autoTimer = setInterval(nextSlide, 5500);
   }
 
-  /* kick off auto-play */
+  /* kick off auto-play (but video listener may override) */
   resetAutoPlay();
+
+  // if first slide contains a video, attach end handler and start playback
+  // const firstVideo = document.querySelector('#slide-0 video');
+  // if (firstVideo) {
+  //   firstVideo.loop = false;
+  //   firstVideo.onended = nextSlide;
+  //   firstVideo.currentTime = 0;
+  //   firstVideo.play().catch(() => {});
+  //   clearInterval(autoTimer);
+  // }
+
+  
 
   /* ── Mobile menu toggle ── */
   function toggleMenu() {
