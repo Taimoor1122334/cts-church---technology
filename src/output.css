@@ -660,6 +660,7 @@
 }
 html {
   scroll-behavior: smooth;
+  overflow: hidden;
 }
 #home, #about, #tracks, #who-should-attend {
   scroll-margin-top: 130px;
