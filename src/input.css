@@ -151,14 +151,7 @@ nav .nav-link{
 }
 #menuToggleBtn{
   @apply cursor-pointer p-2  text-white;
-  display: block !important;
   z-index: 60;
-}
-
-/* when navbar becomes fixed/sticky make sure the menu button remains visible */
-#mainNavbar.fixed #menuToggleBtn,
-#mainNavbar.sticky #menuToggleBtn {
-  display: block !important;
 }
 
 

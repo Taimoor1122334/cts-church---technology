@@ -7,7 +7,6 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
     --container-2xl: 42rem;
@@ -823,11 +822,7 @@ body {
   cursor: pointer;
   padding: calc(var(--spacing) * 2);
   color: var(--color-white);
-  display: block !important;
   z-index: 60;
-}
-#mainNavbar.fixed #menuToggleBtn, #mainNavbar.sticky #menuToggleBtn {
-  display: block !important;
 }
 nav .nav-link {
   position: relative;
