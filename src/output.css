@@ -825,11 +825,6 @@ body {
   cursor: pointer;
   padding: calc(var(--spacing) * 2);
   color: var(--color-white);
-  display: block !important;
-  z-index: 60;
-}
-#mainNavbar.fixed #menuToggleBtn, #mainNavbar.sticky #menuToggleBtn {
-  display: block !important;
 }
 nav .nav-link {
   position: relative;
