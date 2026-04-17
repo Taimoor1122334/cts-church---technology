@@ -684,6 +684,10 @@ body {
 @layer component {
   h1 {
     font-size: clamp(1.75rem, 4.2vw + 1rem, 4.75rem);
+    @media (width >= 64rem) {
+      --tw-leading: 90px;
+      line-height: 90px;
+    }
   }
   .large-heading {
     font-size: clamp(1.875rem, 2.78vw + 1rem, 3.5rem);
@@ -1083,11 +1087,11 @@ nav .nav-link:hover::after, nav .nav-link:focus-visible::after {
   inherits: false;
   initial-value: solid;
 }
-@property --tw-tracking {
+@property --tw-leading {
   syntax: "*";
   inherits: false;
 }
-@property --tw-leading {
+@property --tw-tracking {
   syntax: "*";
   inherits: false;
 }
@@ -1108,8 +1112,8 @@ nav .nav-link:hover::after, nav .nav-link:focus-visible::after {
       --tw-duration: initial;
       --tw-ease: initial;
       --tw-border-style: solid;
-      --tw-tracking: initial;
       --tw-leading: initial;
+      --tw-tracking: initial;
     }
   }
 }

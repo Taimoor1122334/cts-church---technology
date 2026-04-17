@@ -13,7 +13,6 @@ html{
 
 nav{
   overflow-x: hidden;
- 
 }
 
 
@@ -42,6 +41,8 @@ font-style: normal;
     h1{
         font-size: clamp(1.75rem, 4.2vw + 1rem, 4.75rem);
         /* @apply text-[76px]; */
+        @apply lg:leading-[90px];
+         
     }
      .large-heading{
         font-size: clamp(1.875rem, 2.78vw + 1rem, 3.5rem);
