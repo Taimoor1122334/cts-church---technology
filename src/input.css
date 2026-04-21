@@ -76,10 +76,20 @@ font-style: normal;
         font-size: clamp(1rem, 0.6vw + 1rem, 1.5rem);
         line-height: 1.5;
          font-family: "proxima-nova", sans-serif;
+         font-weight: 500;
         /* @apply text-[24px] */
     }
+
+    .time{
+        font-size: clamp(1rem, 0.6vw + 1rem, 1.5rem);
+        font-weight: 700;
+        
+    }
+
     li{
        font-size: clamp(1rem, 0.6vw + 1rem, 1.5rem);
+       font-weight: 500;
+       
       
     }
    
@@ -99,6 +109,12 @@ font-style: normal;
          font-family: "proxima-nova", sans-serif;
   font-weight: 700;
         @apply text-[13px] md:text-[15px]  bg-[#F57820] border-2 border-[#F57820] py-2 px-6 rounded-full text-white hover:bg-transparent  hover:border-2 hover:bg-transparent hover:text-[#F57820]
+    }
+
+    .large-btn{
+         font-family: "proxima-nova", sans-serif;
+  font-weight: 700;
+        @apply text-[15px] md:text-[18px]  bg-[#F57820] border-2 border-[#F57820] py-2 px-8 rounded-full text-white hover:bg-transparent  hover:border-2 hover:bg-transparent hover:text-[#F57820]
     }
      .transparent-btn{
          font-family: "proxima-nova", sans-serif;
@@ -178,7 +194,14 @@ nav .nav-link {
   
 }
 
-.track-item{
+.btn.btn-outline {
+    background-color: transparent;
+    color: black;
+    border-color: black;
+}
+
+.track-item {
+  position: relative;
   padding: 20px 0 20px 50px;
 }
 .track-item::before {
