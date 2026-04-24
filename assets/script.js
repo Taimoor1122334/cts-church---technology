@@ -1,4 +1,19 @@
- document.querySelectorAll('.dropdown').forEach(function (dropdown) {
+ // Ensure only one details element is open at a time (manual toggle)
+ const details = document.querySelectorAll("details");
+
+  details.forEach((targetDetail) => {
+    targetDetail.addEventListener("toggle", () => {
+      if (targetDetail.open) {
+        details.forEach((detail) => {
+          if (detail !== targetDetail) {
+            detail.open = false;
+          }
+        });
+      }
+    });
+  });
+
+document.querySelectorAll('.dropdown').forEach(function (dropdown) {
             const btn = dropdown.querySelector('.dropdown-btn');
             const body = dropdown.querySelector('.dropdown-body');
             let isOpen = false;
@@ -306,7 +321,8 @@ document.querySelectorAll('.dropdown-container').forEach(container => {
       ? 'M4 6h16M4 12h16M4 18h16'
       : 'M6 18L18 6M6 6l12 12');
   }
-
+  
+ 
 
 
   
