@@ -132,7 +132,7 @@ font-style: normal;
     }
 
 nav .nav-link{
-     font-weight: 700;
+     font-weight: 300;
     @apply uppercase
 }
 
