@@ -133,7 +133,7 @@ font-style: normal;
 
 nav .nav-link{
      font-weight: 300;
-    @apply uppercase
+   
 }
 
 @media (max-width:1270px){
